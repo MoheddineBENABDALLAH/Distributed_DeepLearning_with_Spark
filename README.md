@@ -1,13 +1,26 @@
+**Distributed Deep Learning with Spark and Deeplearning4j**
+This project demonstrates how to perform distributed deep learning using Spark and Deeplearning4j. The aim is to leverage the power of parallel processing to train models on large datasets efficiently.
+
+**Introduction**
+Distributed deep learning allows the training of machine learning models on large datasets by dividing the workload across multiple cores and machines. This project uses Spark to distribute the data and Deeplearning4j to train the models. The process involves the following steps:
+
+1- Shards of the input dataset are distributed over all cores.
+2- Workers process data synchronously in parallel.
+3- A model is trained on each shard of the input dataset.
+4- Workers send the transformed parameters of their models back to the master.
+5- The master averages the parameters.
+6- The parameters are used to update the model on each worker's core.
+7- When the error ceases to shrink, the Spark job ends
+
+**Architecture of Data Parallelism in Distributed Training**
 ![alt text](https://miro.medium.com/v2/resize:fit:640/format:webp/1*691Sexy23zPn0Mv_T6pgBQ.png)
+**Architecture of  Distributed Training with spark**
+![alt text](https://static001.infoq.cn/resource/image/f2/74/f2148eb24747d930ef6faffe5fa90674.png)
 
-Deeplearning4j is 
 
-Works as job within Spark :
-
-1- Shards of the input dataset are distrubted over all cores
-2- Workers process data synchronously in parralel
-3- A model is trained on each shard of the input dataset
-4- Workers send the transformed parameters of their models back to the master
-5- the master averages the parametres
-6- the parametres are used to update the model on each worker's core
-7- When the error ceases to shrink,the Spark job ends
+**Prerequisites**
+Before you begin, ensure you have met the following requirements:
+- Java 8 or higher
+- Apache Spark 3.0 or higher
+- Maven
+- Deeplearning4j
