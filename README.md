@@ -50,11 +50,10 @@ Before you begin, ensure you have met the following requirements:
 
 ## Usage
 
-1. **Prepare your data and place it in a suitable directory.**
 
-2. **Configure your Spark and Deeplearning4j settings as needed.**
+1. **Configure your Spark and Deeplearning4j settings as needed.**
 
-3. **Run the distributed training job:**
+2. **Run the distributed training job:**
 
     ```bash
     spark-submit --class SparkDeepLearning.SparkDeepLearning.App --master <spark-master-url> target/SparkDeepLearning-0.0.1-SNAPSHOT.jar
