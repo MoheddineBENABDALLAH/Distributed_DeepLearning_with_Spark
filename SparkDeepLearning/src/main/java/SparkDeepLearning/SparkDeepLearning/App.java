@@ -50,8 +50,7 @@ public class App {
 
         JavaSparkContext sc = new JavaSparkContext(sparkConf);
 
-        //Load the data into memory then parallelize
-        //This isn't a good approach in general - but is simple to use for this example
+
         DataSetIterator iterTrain = new MnistDataSetIterator(batchSizePerWorker, true, 12345);
         DataSetIterator iterTest = new MnistDataSetIterator(batchSizePerWorker, false, 12345);
         List<DataSet> trainDataList = new ArrayList<>();
@@ -67,7 +66,6 @@ public class App {
         JavaRDD<DataSet> testData = sc.parallelize(testDataList).persist(StorageLevel.MEMORY_ONLY_SER());
 
 
-        //----------------------------------
         //Create network configuration and conduct network training
         MultiLayerConfiguration conf = new NeuralNetConfiguration.Builder()
                 .updater(Updater.ADAM)
@@ -81,9 +79,9 @@ public class App {
 
 
 
-        TrainingMaster tm = new ParameterAveragingTrainingMaster.Builder(batchSizePerWorker)    //Each DataSet object: contains (by default) 32 examples
-                .averagingFrequency(10)
-                .workerPrefetchNumBatches(10)            //Async prefetching: 2 examples per worker
+        TrainingMaster tm = new ParameterAveragingTrainingMaster.Builder(batchSizePerWorker)    
+                .averagingFrequency(3)
+                .workerPrefetchNumBatches(2)            //Async prefetching: 2 examples per worker
                 .batchSizePerWorker(batchSizePerWorker)
                 .build();
 
@@ -99,7 +97,6 @@ public class App {
         	 sparkNet.fit(trainData);
             double score = sparkNet.getScore();
             log.info("Completed Epoch {} with score {}", i, score);
-            //log.info("Completed Epoch {}", i);
         }
         long endTime = System.currentTimeMillis();
         long duration = endTime - startTime; // Time taken in milliseconds
