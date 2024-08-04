@@ -36,8 +36,8 @@ Before you begin, ensure you have met the following requirements:
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/yourusername/distributed-deep-learning-spark-deeplearning4j.git
-    cd distributed-deep-learning-spark-deeplearning4j
+    git clone https://github.com/MoheddineBENABDALLAH/Spark_DeepLearning.git
+    cd Spark_DeepLearning
     ```
 
 2. **Build the project using Maven:**
@@ -57,14 +57,7 @@ Before you begin, ensure you have met the following requirements:
 3. **Run the distributed training job:**
 
     ```bash
-    spark-submit --class com.example.Main --master <spark-master-url> target/distributed-deep-learning-spark-deeplearning4j-1.0-SNAPSHOT.jar
+    spark-submit --class SparkDeepLearning.SparkDeepLearning.App --master <spark-master-url> target/SparkDeepLearning-0.0.1-SNAPSHOT.jar
     ```
 
-4. **Monitor the job progress using Spark's web UI.**
 
-## Examples
-
-### Example 1: Training a Neural Network
-
-```java
-// Java code to configure and train a neural network using Deeplearning4j
