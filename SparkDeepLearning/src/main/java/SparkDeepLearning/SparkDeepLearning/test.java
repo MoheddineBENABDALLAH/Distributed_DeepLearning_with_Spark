@@ -19,8 +19,8 @@ import java.io.File;
 public class test {
     private static final Logger log = LoggerFactory.getLogger(App.class);
 
-    private int batchSize = 500;
-    private int numEpochs = 500;
+    private int batchSize = 64;
+    private int numEpochs = 100;
 
     public static void main(String[] args) throws Exception {
         new App().entryPoint(args);
@@ -57,7 +57,6 @@ public class test {
         long duration = endTime - startTime; // Time taken in milliseconds
 
         // Save the model
-        model.save(new File("/home/user/model2.bin"));
 
         // Load the model for evaluation
         MultiLayerNetwork restoredModel = MultiLayerNetwork.load(new File("/home/user/model2.bin"), true);
