@@ -1,0 +1,99 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>SparkDeepLearning</groupId>
+  <artifactId>SparkDeepLearning</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>SparkDeepLearning</name>
+  <url>http://maven.apache.org</url>
+    <modules>
+        <module>SparkAI</module>
+    </modules>
+
+    <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spark.version>3.5.1</spark.version>
+        <scala.version>2.12</scala.version>
+  </properties>
+
+ <dependencies>
+        <dependency>
+            <groupId>org.deeplearning4j</groupId>
+            <artifactId>deeplearning4j-core</artifactId>
+            <version>1.0.0-beta7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.nd4j</groupId>
+            <artifactId>nd4j-native-platform</artifactId>
+            <version>1.0.0-beta7</version>                                                                                                                                                  
+        </dependency>                                                                                                                                                                       
+        <dependency>                                                                                                                                                                        
+            <groupId>org.datavec</groupId>                                                                                                                                                  
+            <artifactId>datavec-api</artifactId>                                                                                                                                            
+            <version>1.0.0-beta7</version>                                                                                                                                                  
+        </dependency>
+        <dependency>
+            <groupId>org.nd4j</groupId>
+            <artifactId>nd4j-api</artifactId>
+            <version>1.0.0-beta7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.nd4j</groupId>
+            <artifactId>nd4j-native-api</artifactId>
+            <version>1.0.0-beta7</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.deeplearning4j</groupId>
+            <artifactId>dl4j-spark_2.12</artifactId>
+            <version>1.0.0-beta7</version>
+        </dependency>
+     <dependency>
+         <groupId>org.deeplearning4j</groupId>
+         <artifactId>dl4j-spark-parameterserver_2.12</artifactId>
+         <version>1.0.0-beta7</version>
+     </dependency>
+        <dependency>
+            <groupId>org.deeplearning4j</groupId>
+            <artifactId>deeplearning4j-common-tests</artifactId>
+            <version>1.0.0-beta7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.deeplearning4j</groupId>
+            <artifactId>deeplearning4j-common</artifactId>
+            <version>1.0.0-beta7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.deeplearning4j</groupId>
+            <artifactId>deeplearning4j-datasets</artifactId>
+            <version>1.0.0-beta7</version>
+        </dependency>
+     <dependency>
+         <groupId>org.nd4j</groupId>
+         <artifactId>nd4j-parameter-server</artifactId>
+         <version>1.0.0-beta7</version>
+     </dependency>
+
+ <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.1</version>
+        </dependency>
+     <dependency>
+         <groupId>org.agrona</groupId>
+         <artifactId>agrona</artifactId>
+         <version>1.15.0</version> <!-- Change this to the version required by your setup -->
+     </dependency>
+</dependencies>
+
+
+
+
+</project>
